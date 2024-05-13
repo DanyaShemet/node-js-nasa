@@ -9,7 +9,8 @@
     "dev": "concurrently npm:server npm:client",
     "deploy": "concurrently npm:build:client npm:build:server",
     "build:client": "npm run build --prefix client",
-    "build:server": "npm start --prefix server"
+    "build:server": "npm start --prefix server",
+    "test": "npm test --prefix server"
   },
   "keywords": [],
   "author": "",
