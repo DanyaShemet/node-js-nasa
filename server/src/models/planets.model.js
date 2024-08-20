@@ -51,7 +51,6 @@ async function getAllPlanets() {
 }
 
 async function savePlanet(planet) {
-    console.log(planet.kepler_name)
     try {
         await planets.updateOne(
             {
