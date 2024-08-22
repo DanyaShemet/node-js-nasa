@@ -14,7 +14,7 @@ describe('Launches API', () => {
     describe('/GET launches', () => {
         test('should return all launches', async () => {
             await request(app)
-                .get('/launches')
+                .get('/v1/launches')
                 .expect(200)
                 .expect('Content-Type', /json/)
         })
@@ -43,7 +43,7 @@ describe('Launches API', () => {
 
         test('should respond 201 created', async () => {
             const res = await request(app)
-                .post('/launches')
+                .post('/v1/launches')
                 .send(completeLaunchData)
                 .expect(201)
                 .expect('Content-Type', /json/)
@@ -55,7 +55,7 @@ describe('Launches API', () => {
         })
         test('should catch missing required properties', async () => {
             const res = await request(app)
-                .post('/launches')
+                .post('/v1/launches')
                 .send(launchDataWithoutDate)
                 .expect(400)
                 .expect('Content-Type', /json/)
@@ -67,7 +67,7 @@ describe('Launches API', () => {
 
         test('should catch invalid dates', async () => {
             const res = await request(app)
-                .post('/launches')
+                .post('/v1/launches')
                 .send(launchDataWithInvalidDate)
                 .expect(400)
                 .expect('Content-Type', /json/)
