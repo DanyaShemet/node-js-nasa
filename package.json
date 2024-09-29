@@ -12,7 +12,7 @@
     "build:client": "npm run build --prefix client",
     "build:server": "npm start --prefix server",
     "run:server-cluster": "npm run cluster --prefix server",
-    "test": "npm test --prefix server",
+    "test": "npm test --prefix server && npm install --prefix client",
     "install": "npm install --prefix client && npm install --prefix server"
   },
   "keywords": [],
